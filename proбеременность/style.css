@@ -1,0 +1,942 @@
+/* === ГЛОБАЛЬНЫЙ СБРОС СТИЛЕЙ === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === ОСНОВНОЙ ФОН СТРАНИЦЫ === */
+body {
+    margin: 0;
+    min-height: 100vh;
+   /* background: linear-gradient(135deg, #ffe5e0 0%, #ffd9e6 100%);*/
+   background: linear-gradient(135deg, #fcc9bf82 0%, #f793b65a 100%); 
+   font-family: Tenor Sans, sans-serif;
+    overflow-x: hidden;
+}
+header {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 30px 40px;
+  z-index: 100;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+}
+
+/* === ЦЕНТР (логотип + текст) === */
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-self: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* === КРУГЛЫЙ ЛОГОТИП (белый) === */
+.logo-circle {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+  will-change: transform;
+}
+
+.logo-link{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.logo-circle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* === ИЗОБРАЖЕНИЕ ЛОГОТИПА === */
+.logo-image {
+  width: 60%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* === ТЕКСТОВОЕ НАЗВАНИЕ === */
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #d45a3b;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* === НАВИГАЦИОННОЕ МЕНЮ === */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #5a4a3a;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #d45a3b;
+}
+
+/* === ЧЕКБОКС (скрыт) === */
+.burger-checkbox {
+  display: none;
+}
+
+/* === БУРГЕР-ИКОНКА === */
+.burger-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+  z-index: 103;
+  justify-self: end;
+}
+
+.burger-icon span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #5a4a3a;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* === БОКОВОЕ МЕНЮ === */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100vh;
+  background: white;
+  padding: 100px 40px 40px;
+  transition: right 0.35s ease;
+  z-index: 101;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.side-menu a {
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: #5a4a3a;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.side-menu a:hover {
+  color: #d45a3b;
+}
+
+/* === ОТКРЫТИЕ МЕНЮ === */
+.burger-checkbox:checked ~ .side-menu {
+  right: 0;
+}
+
+/* === АНИМАЦИЯ БУРГЕРА В КРЕСТИК === */
+.burger-checkbox:checked ~ .burger-icon span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger-checkbox:checked ~ .burger-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-checkbox:checked ~ .burger-icon span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* === ОСНОВНОЙ КОНТЕЙНЕР (центрирует контент) === */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* === СТИЛИ ДЛЯ КОНТЕНТА === */
+.main-title {
+    font-size: 2.5rem;
+    color: #d45a3b;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #4a3b2c;
+    margin-bottom: 1rem;
+}
+
+/* === СЕКЦИЯ С ТЕКСТОМ И КАРТИНКОЙ === */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+}
+
+/* === ЛЕВАЯ ЧАСТЬ (ТЕКСТ) === */
+.hero-content {
+    flex: 1;
+    /* Занимает всё доступное пространство */
+    /* 1 означает, что блок будет расширяться, чтобы занять свободное место */
+}
+
+/* === ПРАВАЯ ЧАСТЬ (КАРТИНКА) === */
+.hero-image {
+    flex: 1;
+    /* Картинка тоже занимает всё доступное пространство */
+    /* Текст и картинка делят ширину поровну (50% на 50%) */
+    
+    display: flex;
+    justify-content: center;
+    /* Центрируем картинку внутри блока */
+}
+
+.hero-image img {
+    width: 100%;
+    /* Картинка растягивается на всю ширину родительского блока */
+    
+    max-width: 500px;
+    /* Максимальная ширина картинки — 500px (чтобы не была слишком большой) */
+    
+    height: auto;
+    /* Высота подстраивается автоматически, сохраняя пропорции */
+    
+    border-radius: 30px;
+    /* Закругленные углы: 30px — достаточно большие, красиво */
+    
+    object-fit: cover;
+    /* Картинка заполняет пространство, сохраняя пропорции */
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* Легкая тень для объема */
+}
+
+
+
+.hero-greeting {
+    font-size: 1.5rem;
+    /* Размер приветствия чуть больше обычного текста */
+    
+    font-weight: 500;
+    /* Средняя жирность */
+    
+    color: #d45a3b;
+    /* Терракотовый цвет для акцента */
+    
+    margin-bottom: 1rem;
+}
+
+.hero-text {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #4a3b2c;
+    margin-bottom: 1rem;
+}
+
+/* === АДАПТИВНОСТЬ ДЛЯ ПЛАНШЕТОВ === */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-greeting {
+        font-size: 1.3rem;
+    }
+    
+    .hero-text {
+        font-size: 1rem;
+    }
+}
+
+/* === АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ === */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        /* На телефонах меняем направление на колонку */
+        /* Текст будет сверху, картинка снизу */
+        
+        gap: 2rem;
+        /* Уменьшаем расстояние между элементами */
+    }
+    
+    .hero-content {
+        order: 1;
+        /* Текст первый по порядку */
+    }
+    
+    .hero-image {
+        order: 2;
+        /* Картинка вторая */
+        width: 100%;
+    }
+    
+    .hero-image img {
+        max-width: 100%;
+        /* На телефоне картинка на всю ширину */
+        border-radius: 20px;
+        /* Чуть меньше скругление на телефоне */
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .hero-greeting {
+        font-size: 1.2rem;
+    }
+}
+
+/* === СЕКЦИЯ О ФОРУМЕ === */
+.forum-section {
+    margin: 3rem 0;
+}
+
+.forum-card {
+       
+    padding: 2rem 2.5rem;
+    /* Внутренние отступы */
+    
+    text-align: center;
+    /* Текст по центру */
+    
+    /*box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);*/
+}
+
+.forum-text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #4a3b2c;
+    margin: 0;
+}
+
+/* === ИТОГОВАЯ СЕКЦИЯ === */
+.conclusion {
+    margin: 3rem 0 4rem;
+    /* Отступы: сверху 3rem, снизу 4rem */
+}
+
+.conclusion-card {
+    text-align: center;
+    /* Центрируем содержимое */
+    
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2rem;
+}
+
+.conclusion-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #d45a3b;
+    margin-bottom: 2rem;
+}
+
+/* === КНОПКА ПРИЗЫВА К ДЕЙСТВИЮ === */
+.cta-button {
+    background: #d45a3b;
+    /* Основной цвет кнопки */
+    
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 50px;
+    /* Полностью скругленная кнопка */
+    
+    cursor: pointer;
+    /* Меняем курсор на указатель */
+    
+    transition: all 0.3s ease;
+    /* Плавная анимация */
+    
+    box-shadow: 0 4px 12px rgba(212, 90, 59, 0.3);
+}
+
+.cta-button:hover {
+    background: #b2452a;
+    /* Темнее при наведении */
+    
+    transform: translateY(-2px);
+    /* Легкий подъем */
+    will-change: transform;
+    box-shadow: 0 6px 16px rgba(212, 90, 59, 0.4);
+}
+
+/* === АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ === */
+@media (max-width: 768px) {
+    /* Преимущества: на телефоне картинка под текстом */
+    .benefits-row {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .benefits-content {
+        order: 1;
+        /* Текст первый */
+    }
+    
+    .benefits-image {
+        order: 2;
+        /* Картинка вторая */
+        width: 100%;
+    }
+    
+    .benefits-image img {
+        max-width: 100%;
+    }
+    
+    .benefits-intro {
+        font-size: 1.1rem;
+    }
+    
+    .benefits-list li {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Форум карточка */
+    .forum-card {
+        padding: 1.5rem;
+    }
+    
+    .forum-text {
+        font-size: 1.1rem;
+    }
+    
+    /* Итоговая секция */
+    .conclusion-text {
+        font-size: 1.2rem;
+    }
+    
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* === АДАПТИВНОСТЬ ДЛЯ ПЛАНШЕТОВ === */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .benefits-list li {
+        font-size: 1rem;
+    }
+    
+    .forum-text {
+        font-size: 1.125rem;
+    }
+    
+    .conclusion-text {
+        font-size: 1.3rem;
+    }
+}
+
+
+/* === СЕКЦИЯ: картинка слева, карточки справа === */
+.features-section {
+    margin: 3rem 0;
+    padding: 1rem 0;
+
+}
+
+.features-row {
+    display: flex;
+    /* Flexbox для двух колонок */
+    
+    align-items: center;
+    /* Выравниваем по вертикали (по центру) */
+    
+    gap: 3rem;
+    /* Расстояние между картинкой и карточками */
+    
+    flex-wrap: wrap;
+    /* На узких экранах переносим */
+}
+
+/* === КАРТИНКА СЛЕВА === */
+.features-image {
+    flex: 0.8;
+    /* Занимает немного меньше места, чем карточки */
+    /* 0.8 : 1.2 = примерно 40% на 60% */
+    
+    display: flex;
+    justify-content: center;
+}
+
+.features-image img {
+    width: 100%;
+    /* Картинка на всю ширину родителя */
+    
+    max-width: 450px;
+    /* Максимальная ширина картинки (сделаем поменьше) */
+    
+    height: auto;
+    /* Пропорции сохраняются */
+    
+    border-radius: 30px;
+    /* Закругленные углы */
+    
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* === ПРАВАЯ ЧАСТЬ (карточки) === */
+.features-right {
+    flex: 1.2;
+    /* Занимает больше места, чем картинка */
+}
+
+/* === ЗАГОЛОВОК СЕКЦИИ === */
+.features-header {
+    margin-bottom: 1.5rem;
+}
+
+.features-note {
+    font-size: 0.9rem;
+    color: #906347;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.5px;
+}
+
+.features-title {
+    font-size: 1.75rem;
+    color: #d45a3b;
+    margin: 0;
+}
+
+/* === СЕТКА КАРТОЧЕК (2x2) === */
+.features-grid {
+    display: grid;
+    /* Создаем сетку */
+    
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 колонки одинаковой ширины */
+    
+    gap: 1rem;
+    /* Расстояние между карточками (уменьшил для компактности) */
+}
+
+/* === КАРТОЧКА (уменьшенная) === */
+.feature-card {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    /* Меньше скругление */
+    
+    padding: 1rem;
+    /* Меньше внутренние отступы */
+    
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+will-change: transform;
+}
+
+
+
+/* === ИКОНКА (уменьшенная) === */
+.feature-icon {
+    font-size: 1.75rem;
+    /* Меньше иконка */
+    
+    margin-bottom: 0.5rem;
+    /* Меньше отступ */
+}
+
+/* === НАЗВАНИЕ (уменьшенное) === */
+.feature-name {
+    font-size: 1rem;
+    /* Меньше шрифт */
+    
+    font-weight: 600;
+    color: #d45a3b;
+    margin-bottom: 0.5rem;
+}
+
+/* === ОПИСАНИЕ (уменьшенное) === */
+.feature-description {
+    font-size: 0.85rem;
+    /* Меньше шрифт */
+    
+    line-height: 1.4;
+    color: #4a3b2c;
+    margin: 0;
+}
+
+/* === АДАПТИВНОСТЬ ДЛЯ ПЛАНШЕТОВ === */
+@media (max-width: 1024px) {
+    .features-row {
+        gap: 2rem;
+    }
+    
+    .features-image {
+        flex: 1;
+    }
+    
+    .features-right {
+        flex: 1;
+    }
+    
+    .features-image img {
+        max-width: 350px;
+    }
+    
+    .features-title {
+        font-size: 1.5rem;
+    }
+    
+    .features-grid {
+        gap: 0.875rem;
+    }
+    
+    .feature-card {
+        padding: 0.875rem;
+    }
+    
+    .feature-icon {
+        font-size: 1.5rem;
+    }
+    
+    .feature-name {
+        font-size: 0.95rem;
+    }
+    
+    .feature-description {
+        font-size: 0.8rem;
+    }
+}
+
+/* === АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ === */
+@media (max-width: 768px) {
+    .features-row {
+        flex-direction: column;
+        /* На телефонах: картинка сверху, карточки снизу */
+        
+        gap: 1.5rem;
+    }
+    
+    .features-image {
+        order: 1;
+        /* Картинка первая */
+        
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .features-image img {
+        max-width: 280px;
+        /* На телефоне картинка поменьше */
+    }
+    
+    .features-right {
+        order: 2;
+        /* Карточки вторые */
+        
+        width: 100%;
+    }
+    
+    .features-header {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .features-title {
+        font-size: 1.3rem;
+    }
+    
+    .features-note {
+        font-size: 0.8rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        /* На телефоне одна колонка */
+        
+        gap: 0.75rem;
+    }
+    
+    .feature-card {
+        padding: 0.75rem;
+        text-align: center;
+    }
+    
+    .feature-icon {
+        font-size: 1.5rem;
+    }
+    
+    .feature-name {
+        font-size: 0.9rem;
+    }
+    
+    .feature-description {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+/* === ВАЖНОЕ ПРЕДУПРЕЖДЕНИЕ === */
+.disclaimer {
+    margin: 5rem auto;
+    /* Отступы сверху и снизу, автоматическое центрирование */
+    
+    max-width: 1000px;
+    /* Максимальная ширина */
+    
+    padding: 0 20px;
+    /* Отступы по бокам для мобильных */
+}
+
+.disclaimer-card {
+    background: rgba(255, 235, 230, 0.9);
+    /* Светлый персиковый фон */
+
+    border-radius: 1rem;
+    /* Скругленные углы */
+    
+    padding: 1rem 2rem;
+    /* Внутренние отступы */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    /* Расстояние между иконками и текстом */
+    
+    border-left: 4px solid #d45a3b;
+    /* Левая цветная полоска для акцента */
+    
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* Легкая тень */
+    
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.disclaimer-card:hover {
+    transform: translateY(-2px);
+    /* Легкий подъем при наведении */
+    will-change: transform;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.disclaimer-icon {
+    font-size: 1.25rem;
+    /* Размер иконки */
+    
+    flex-shrink: 0;
+    /* Иконка не сжимается */
+}
+
+.disclaimer-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* Полужирный */
+    
+    color: #b45a3a;
+    /* Терракотовый цвет */
+    
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin: 0;
+    /* Убираем отступы */
+    
+    text-transform: uppercase;
+    /* Верхний регистр */
+    will-change: transform;
+}
+
+/* ===== ПОДВАЛ ===== */
+.pregnancy-footer {
+    background: #f5edea;
+    margin-top: 60px;
+    padding: 25px 30px 0 30px;
+    border-top: 1px solid rgba(201, 123, 107, 0.2);
+}
+
+.pregnancy-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* ===== ЗАГОЛОВКИ КОЛОНОК ===== */
+.pregnancy-footer-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #c97b6b;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* ===== КОЛОНКА 1: КОНТАКТЫ ===== */
+.pregnancy-footer-contacts {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 6px 0;
+}
+
+.pregnancy-footer-contacts li {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.pregnancy-footer-email-item a{
+    font-weight: 500;
+    color: #4a3b2c;
+    text-decoration: none;
+}
+
+.pregnancy-footer-note {
+    font-size: 14px;
+    color: #a08a82;
+    margin-top: 8px;
+}
+
+/* ===== КОЛОНКА 2: МЕНЮ ПО ЦЕНТРУ ===== */
+.pregnancy-footer-nav-center {
+    text-align: center;
+}
+
+.pregnancy-footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.pregnancy-footer-menu li {
+    margin-bottom: 20px;
+}
+
+.pregnancy-footer-menu a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #2d3e50;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.pregnancy-footer-menu a:hover {
+    color: #c97b6b;
+}
+
+/* ===== КОЛОНКА 3: ТЕЛЕФОНЫ ===== */
+.pregnancy-footer-hotlines {
+    text-align: right;
+}
+
+.pregnancy-footer-hotline-row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 12px;
+    justify-content: end;
+}
+
+.pregnancy-footer-hotline-block {
+    margin-bottom: 12px;
+}
+
+.pregnancy-footer-hotline-row .pregnancy-footer-hotline-block {
+    margin-bottom: 0;
+    
+}
+
+.center{
+    text-align: center;
+}
+
+.pregnancy-footer-hotline-number {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2d3e50;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.pregnancy-footer-hotline-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #c97b6b;
+    margin-bottom: 2px;
+}
+
+.pregnancy-footer-hotline-note {
+    font-size: 14px;
+    color: #a08a82;
+}
+
+/* Укороченная линия справа */
+.pregnancy-footer-hotline-divider {
+    height: 2px;
+    width: 50%;
+    background: rgba(201, 123, 107, 0.3);
+    margin: 12px 0 12px auto;
+}
+
+/* ===== НИЖНЯЯ СТРОКА (НА ВСЮ ШИРИНУ) ===== */
+.pregnancy-footer-bottom {
+    background: #e8dfda;
+    margin-top: 20px;
+    padding: 12px 30px;
+    width: 100%;
+    margin-left: -30px;
+    width: calc(100% + 60px);
+}
+
+.pregnancy-footer-bottom-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pregnancy-footer-copyright {
+    font-size: 15px;
+    color: #8a7a75;
+}
+
+.pregnancy-footer-disclaimer {
+    font-size: 16px;
+    color: #ab7460;
+    font-style: italic;
+}

@@ -1,0 +1,1241 @@
+html {
+  scroll-behavior: smooth;
+}
+
+h2{
+  color: #d45a3b;
+}
+
+section{
+  margin-bottom: 100px;
+}
+
+section[id] {
+  scroll-margin-top: 150px;
+}
+
+.nav-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 0;
+  scroll-margin-top: 100px;
+}
+.list-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+
+}
+.list-nav li {
+  border-radius: 10px;
+  padding: 10px 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  outline: 2px solid #5f3232;
+  list-style-type: none;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+}
+
+.list-nav li a{
+  color: #000;
+  text-decoration: none;
+}
+
+.list-nav li:hover{
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Усиливаем тень при наведении */
+  transform: scale(1.05); /* Увеличение при наведении */
+}
+
+/*              МАРШРУТИЗАЦИЯ        */
+
+table {
+  box-sizing: border-box;
+  margin: auto;
+  margin-bottom: 100px;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 2px solid #000;
+  padding: 10px;
+}
+
+.no-border-between-rows tr:nth-child(1) th {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.no-border-between-rows tr:nth-child(2) td {
+  border-top: none;
+  padding-top: 0;
+}
+
+.start-table {
+  position: relative;
+  margin: 50px 0 25px;
+  text-align: center;
+  scroll-margin-top: 80px;  
+}
+
+.start-table p {
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.right-images-title {
+  position: absolute;
+  top: -150px;
+  right: 10px;
+  z-index: -10;
+  width: 300px;
+  height: 300px;
+}
+
+.right-images-title img {
+  width: 100%;
+  height: 100%;
+}
+
+.left-images-title {
+  position: absolute;
+  top: -150px;
+  left: 10px;
+  z-index: -10;
+  width: 300px;
+  height: 300px;
+}
+
+.left-images-title img {
+  width: 100%;
+  height: 100%;
+}
+
+.heading-color {
+  color: #ff3c3c;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.cell-blood {
+  font-weight: bold;
+}
+
+.color-row {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.table-lifhack td:nth-child(1),
+.table-lifhack th:nth-child(1) {
+  font-weight: bold;
+}
+
+.table-lifhack tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.blood-list > li::marker {
+  font-weight: bold;
+}
+
+.blood-list {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.document-table {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px;
+}
+
+.document-table td:nth-child(1),
+.document-table th:nth-child(1) {
+  font-weight: bold;
+}
+
+.document-table tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.important-border {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 680px;
+  margin: 5px auto;
+  border: 5px dashed red;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.important-border p {
+  margin-bottom: 0;
+}
+
+.small-list {
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.pamatka-doma li {
+  margin: 10px 0 0 20px;
+  font-size: 18px;
+}
+
+.checklist-container {
+  display: flex;
+  flex-wrap: wrap; /* Позволяем элементам переноситься на новую строку */
+  justify-content: space-around;
+  gap: 15px; /* Расстояние между карточками */
+  margin: 20px 0;
+}
+
+.checklist-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px; /* Ширина стикера */
+  min-height: 60px;
+  border-radius: 12px; /* Закругленные углы */
+  padding: 15px 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для объема */
+  font-size: 18px;
+  text-align: center;
+  background-color: #f0f7ff; /* Светлый пастельный фон */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease; /* Анимация */
+}
+
+
+.checklist-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Усиливаем тень при наведении */
+  transform: scale(1.05); /* Увеличение при наведении */
+}
+
+/*              Я И МОЕ ТЕЛО        */
+
+.title-section-my-body {
+  margin: 20px 0 25px;
+  text-align: center;
+}
+
+.conteiner-card-mom-baby {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+
+.title-card {
+  display: flex;
+  justify-content: center;
+  max-width: 200px;
+  margin: auto;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #713c44;
+  color: #5b3535;
+  font-weight: bold;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.list-style-mb {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 10px;
+  font-size: 18px;
+  list-style-type: circle;
+}
+
+.card-style-mb {
+  max-width: 575px;
+  border-radius: 20px;
+  padding: 10px 10px 10px 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  outline: 2px solid rgb(255, 122, 122);
+  background-color: #fff0e8;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card-style-mb:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
+  transform: translateY(-4px);
+}
+section h3 {
+  margin: 30px 0;
+  font-size: 22px;
+}
+
+.connection-baby_and_mom {
+  position: relative;
+}
+
+.img-connection {
+  position: absolute;
+  top: 0;
+  right: 70px;
+  width: 200px;
+  height: 200px;
+}
+
+.card-list-development-plod{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(366px, 1fr));
+  gap: 50px;
+}
+
+.card-plod {
+  position: relative;
+  width: 366px;
+  height: 200px;
+  perspective: 1000px; /* Создаёт 3D‑перспективу */
+}
+
+/* Общий стиль для обеих сторон */
+.card-front,
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 5px 4px 12px rgba(0, 0, 0, 0.5);
+  outline: 2px solid #000; /* Ваша обводка */
+  transition: transform 0.6s ease;
+  backface-visibility: hidden; /* Скрывает обратную сторону элемента */
+}
+
+/* Лицевая сторона */
+.card-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  background: rgba(239, 150, 150, 0.192);
+}
+
+.card-plod-title {
+  margin-bottom: 10px;
+  color: #5b3535;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.card-plod-content {
+  margin-bottom: 8px;
+  font-size: 20px;
+  line-height: 1.4;
+  text-transform: lowercase;
+}
+
+.card-plod-footer {
+  color: #4b4b4b;
+  font-size: 18px;
+}
+
+/* Обратная сторона */
+.card-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #FFE5DC;
+  transform: rotateY(180deg); /* Поворачиваем на 180° изначально */
+}
+
+.card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Изображение заполняет всю карточку */
+}
+
+/* Анимация при наведении */
+.card-plod:hover .card-front {
+  transform: rotateY(-180deg);
+}
+
+.card-plod:hover .card-back {
+  transform: rotateY(0deg);
+}
+
+.content-center{
+  display: flex;
+  justify-content: center;
+}
+
+.red-flags-body{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 850px;
+  margin-top: 75px;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 1px 6px 12px rgba(0, 0, 0, 0.5);
+  outline: 5px ridge #bd1e09;
+  background-color: #ffc1c186;
+}
+
+.title-red-flag{
+  margin: auto;
+}
+
+.list-red-flags{
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+ul.list-red-flags{
+  list-style: none;
+}
+
+.list-red-flags li{
+  margin-bottom: 15px;
+}
+
+ul.list-red-flags li::before{
+  content: "🚩"; /* любой символ: ✓, ➤, •, ✦ и т. д. */
+  margin-right: 10px; /* отступ между маркером и текстом */
+}
+
+
+/*              ЗДОРОВЫЙ ОБРАЗ ЖИЗНИ        */
+
+.hls h3{
+  margin-bottom: 15px;
+}
+
+.titile-section{
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.list-rools{
+  margin-left: 15px;
+  font-size: 20px;
+}
+
+.list-rools li{
+  margin-bottom: 10px;
+}
+
+.what-may-cant{
+  margin-bottom: 10px;
+}
+
+.what-may-cant thead{
+  font-weight: bold;
+  font-size: 22px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.what-may-cant tbody{
+  font-size: 20px;
+}
+
+.what-may-cant tbody td:first-child::before{
+  content: "✅";
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.what-may-cant tbody td:last-child::before{
+  content: "❌";
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+
+.what-may-cant tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+.container-card-food {
+    margin: 0;
+    padding: 20px 30px;
+}
+
+/* ===== ЗАГОЛОВКИ ===== */
+.page-title {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+}
+
+.page-subtitle {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* ===== СЕТКА КАРТОЧЕК ===== */
+.trimesters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 0;
+}
+
+/* ===== КАРТОЧКИ ===== */
+.trimester-card {
+    border-radius: 32px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.92);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trimester-card:hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+}
+
+/* ===== ШАПКИ КАРТОЧЕК ===== */
+.card-header {
+    min-height: 180px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.03);
+    padding: 24px 28px 16px; 
+}
+
+.trimester-card:nth-child(1) .card-header {
+    background: linear-gradient(135deg, #ffe3ea 0%, #ffd9e4 100%);
+}
+.trimester-card:nth-child(1) .trimester-number { color: #d45a78; }
+.trimester-card:nth-child(1) .trimester-title { color: #b54160; }
+
+.trimester-card:nth-child(2) .card-header {
+    background: linear-gradient(135deg, #ffede3 0%, #ffe0d4 100%);
+}
+.trimester-card:nth-child(2) .trimester-number { color: #cc7b5a; }
+.trimester-card:nth-child(2) .trimester-title { color: #b25d3a; }
+
+.trimester-card:nth-child(3) .card-header {
+    background: linear-gradient(135deg, #e3f0f5 0%, #d5e8ef 100%);
+}
+.trimester-card:nth-child(3) .trimester-number { color: #5f9db2; }
+.trimester-card:nth-child(3) .trimester-title { color: #4a849b; }
+/* ===== ТЕКСТ В КАРТОЧКАХ ===== */
+.trimester-number {
+    margin: 0;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.trimester-title {
+    margin: 8px 0 4px 0;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.trimester-period {
+    margin: 0 0 10px 0;
+    color: #4a3b3f;
+    font-size: 16px;
+}
+
+.trimester-keyword {
+    display: inline-block;
+    border-radius: 24px;
+    padding: 5px 14px;
+    color: #6b4b56;
+    font-weight: 500;
+    font-size: 15px;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* ===== СОДЕРЖИМОЕ КАРТОЧКИ ===== */
+.card-content {
+    padding: 20px 28px 28px;
+}
+
+.section {
+    margin-bottom: 28px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 14px 0;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+.section-title::before {
+    content: "✨";
+    font-size: 16px;
+}
+
+/* ===== СПИСКИ ===== */
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.list li {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 26px;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.check-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #cd7a5c;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.heart-list li::before {
+    content: "💗";
+    position: absolute;
+    left: 0;
+    font-size: 14px;
+}
+
+/* ===== РАСПИСАНИЕ ДНЯ ===== */
+.daily-schedule {
+    margin: 0 0 12px 0;
+    border-radius: 24px;
+    padding: 16px 20px;
+    background: rgba(253, 242, 235, 0.7);
+}
+
+.daily-schedule p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.time {
+    min-width: 88px;
+    color: #bc6f5c;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.card-conteiner{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 25px;
+  column-gap: 50px;
+  margin-bottom: 30px;
+}
+
+.card-active{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 575px;
+  height: auto;
+  border-radius: 20px;
+  padding: 15px 10px 10px 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  outline: 2px solid rgb(255, 122, 122);
+  text-align: center;
+  background-color: #fff0e8;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card-active:hover{
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
+  transform: translateY(-4px);
+}
+
+.title-card-active{
+  color: rgb(72, 11, 11);
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+
+}
+
+.content-card-sctive{
+  margin-bottom: 10px;
+  color: #4a3b3f;
+  font-size: 18px;
+}
+
+.footer-card-active{
+  color: #7a5d65;
+  font-size: 16px;
+  text-align: center;
+}
+
+.card-active span{
+  font-size: 20px;
+
+}
+
+
+/* === ВАЖНОЕ ПРЕДУПРЕЖДЕНИЕ === */
+.disclaimer_HLS {
+    /* Отступы сверху и снизу, автоматическое центрирование */
+    
+    max-width: 1000px;
+    margin: 50px auto;
+    /* Максимальная ширина */
+    
+    padding: 0 20px;
+    /* Отступы по бокам для мобильных */
+}
+
+.disclaimer-card_HLS {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    border-left: 4px solid #d45a3b;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 235, 230, 0.9);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.disclaimer-card_HLS:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+    /* Легкий подъем при наведении */
+    will-change: transform;
+}
+
+.disclaimer-text_HLS {
+  margin: 0;
+  color: #b45a3a;
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.conteiner-content-img{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.list-no-sport .conteiner-img img{
+  width: 500px;
+}
+
+.title-list{
+  margin-bottom: 15px;
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.list-side-border{
+  margin: 0;
+  border-left: 2px solid #b32217;
+  padding: 20px 26px;
+}
+
+.no-marker-list{
+  list-style-type: none;
+}
+
+.no-marker-list li::before {
+  content: "❖";
+  margin-right: 8px;
+  color: #722d28; /* например, терракотовый или цвет вашего сайта */
+}
+
+.after-title-text{
+  font-size: 21px;
+  margin-bottom: 15px;
+}
+/* ===== КОНТЕЙНЕР БЛОКА ===== */
+.exercises-module {
+    margin: 0;
+    padding: 20px 30px;
+}
+
+/* ===== СЕТКА КАРТОЧЕК ===== */
+.exercises-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== КАРТОЧКА ===== */
+.exercise-card {
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.92);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+.exercise-card:hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+}
+
+/* 5-я карточка на месте 6-й */
+.card-last {
+    grid-column: 3 / 4;
+    justify-self: end;
+    width: 100%;
+}
+
+/* ===== ЗОНА ДЛЯ КАРТИНКИ (между 4 и 5 карточкой) ===== */
+.image-drop-zone {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    max-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.image-drop-zone img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: none;
+}
+
+.image-drop-zone.active img {
+    display: block;
+}
+
+/* ===== ОСТАЛЬНЫЕ СТИЛИ ===== */
+.exercise-content {
+    width: 100%;
+}
+
+.exercise-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 12px 0;
+    color: rgb(72, 11, 11);
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.exercise-description {
+    margin: 0 0 16px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 16px;
+    font-size: 18px;
+    line-height: 1.45;
+}
+
+.exercise-benefit {
+    margin: 0;
+    border-radius: 16px;
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 1.4;
+    background: #fff0e8;
+}
+
+.zaradka{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.zaradka li{
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.priem .conteiner-img img{
+  height: 220px;
+  border-radius: 20px;
+}
+
+.priem{
+  margin-bottom: 25px;
+}
+
+.important-border-sport {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 680px;
+  margin: 5px auto;
+  border: 5px dashed rgb(109, 116, 0);
+  border-radius: 20px;
+  padding: 15px 20px 15px 25px;
+  font-size: 18px;
+}
+
+.important-border-sport h4{
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.important-border-sport li{
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.italic{
+  font-weight: 600;
+  color: #2e2427;
+  font-style: italic;
+}
+
+.img-curs-brm img{
+  width: 350px;
+  height: auto;
+  border-radius: 20px;
+  margin: 5px 0;
+  transition: transform 0.3s ease;
+}
+
+.card-active:hover .img-curs-brm img {
+    transform: scale(1.15);
+    transition: transform 0.3s ease;
+}
+
+#safe .title-list{
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+/* ===== КОНТЕЙНЕР БЛОКА ===== */
+.sleep-container {
+    margin: 0;
+    padding: 20px 30px;
+}
+
+/* ===== СЕТКА КАРТОЧЕК ===== */
+.sleep-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ===== КАРТОЧКА ===== */
+.sleep-card {
+    background: #fff0e8;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sleep-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Выделенная карточка (поза) */
+.sleep-card-highlight {
+    background: linear-gradient(135deg, #fcc9bf82 0%, #f793b65a 100%);
+    border-left: 4px solid #c97b6b;
+}
+
+/* ===== ЗАГОЛОВОК КАРТОЧКИ ===== */
+.sleep-card-title {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: brown;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(145, 123, 119, 0.2);
+}
+.th-ch{
+  margin-top: 20px;
+}
+
+/* ===== КОНТЕНТ КАРТОЧКИ ===== */  
+.sleep-card-content {
+    font-size: 20px;
+}
+
+.sleep-note {
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    color: #3d3836;
+    margin-top: 8px;
+}
+
+.sleep-emphasis {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #71453c;
+    margin-bottom: 8px;
+}
+
+.sleep-warning {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #171312;
+    background: rgba(201, 123, 107, 0.1);
+    padding: 6px 10px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+
+
+
+/* ===== КОНТЕЙНЕР БЛОКА ===== */
+.insomnia-container {
+    margin: 0;
+    padding: 20px 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.insomnia-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 30px 0;
+    letter-spacing: 0.5px;
+}
+
+/* ===== СЕТКА ===== */
+.insomnia-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ===== ПУНКТ ===== */
+.insomnia-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 16px 24px;
+    transition: all 0.25s ease;
+    border: 1px solid rgba(201, 123, 107, 0.15);
+}
+
+.insomnia-item:hover {
+    background: rgba(255, 255, 255, 0.98);
+    border-color: rgba(201, 123, 107, 0.3);
+    transform: translateX(6px);
+}
+
+/* ===== НОМЕР ===== */
+.insomnia-item-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #c97b6b;
+    opacity: 0.6;
+    min-width: 50px;
+    letter-spacing: 1px;
+}
+
+/* ===== ТЕКСТ ===== */
+.insomnia-item-text {
+    font-size: 17px;
+    font-weight: 500;
+    color: #2d3e50;
+    line-height: 1.4;
+}
+
+.gigiena-bit{
+  font-size: 18px;
+}
+.gigiena-bit th{
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.gigiena-bit tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.gigiena-bit td:nth-child(1) {
+  font-weight: 600;
+}
+
+
+.title-card-work {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 7px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #713c44;
+  color: #5b3535;
+  font-weight: bold;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.list-work{
+  font-size: 20px;
+}
+
+.list-work li{
+  margin-top: 5px
+}
+
+.list-marker-gal, .list-marker-krest{
+  list-style-type: none;
+}
+.no-marker-list{
+  list-style-type: none;
+}
+
+.list-marker-gal li::before {
+  content: "✅";
+  margin-right: 8px;
+}
+
+.list-marker-krest li::before {
+  content: "❌";
+  margin-right: 8px;
+}
+
+.line-height{
+  line-height: 1.4;
+}
+
+
+/* ===== ЗАГОЛОВОК СНАРУЖИ ===== */
+.pregnancy-routine-heading {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 75px 0 20px 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.pregnancy-routine-heading-sub {
+    font-size: 20px;
+    font-weight: 550;
+    color: #634d45;
+    display: inline-block;
+    margin-left: 8px;
+    text-transform: lowercase;
+}
+
+/* ===== КОНТЕЙНЕР ТАЙМЛАЙНА ===== */
+.pregnancy-timeline-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 30px 40px 30px;
+    background: #fefaf8;
+    border-radius: 25px;
+}
+
+/* ===== ТАЙМЛАЙН ===== */
+.pregnancy-timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+/* Вертикальная линия */
+.pregnancy-timeline::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: #c97b6b;
+    opacity: 0.3;
+}
+
+/* ===== ПУНКТ ТАЙМЛАЙНА ===== */
+.pregnancy-timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+    padding-left: 28px;
+}
+
+.pregnancy-timeline-item-last {
+    margin-bottom: 0;
+}
+
+/* Кружок */
+.pregnancy-timeline-dot {
+    position: absolute;
+    left: -6px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    background: #d45a3b;
+    border-radius: 50%;
+    border: 2px solid #fefaf8;
+    box-shadow: 0 0 0 2px #d45a3b;
+}
+
+/* Время */
+.pregnancy-timeline-time {
+    font-size: 22px;
+    font-weight: 700;
+    color: #d45a3b;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+}
+
+/* Текст действия */
+.pregnancy-timeline-text {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Пояснение */
+.pregnancy-timeline-note {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #a08a82;
+    margin-top: 4px;
+}
