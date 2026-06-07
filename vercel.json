@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/proбеременность/main.html" },
+    { "source": "/:path", "destination": "/proбеременность/:path" }
+  ]
+}
