@@ -56,7 +56,20 @@
     <!-- ОСНОВНОЙ КОНТЕНТ -->
     <main class="container">
         <h1 class="main-title">Это страница ФОРУМА!</h1>
+<div class="forum-welcome">
+    <p>👋 Добро пожаловать в наше сообщество будущих мам!</p>
+    <p>Здесь вы можете задать вопросы, поделиться опытом и найти поддержку.</p>
+</div>
 
+<div class="forum-rules">
+    <p>📌 <strong>Правила форума:</strong></p>
+    <ul>
+        <li>Будьте вежливы и уважайте других участниц</li>
+        <li>Не давайте медицинских советов — рекомендации только от врача</li>
+        <li>Личные истории приветствуются и остаются анонимными</li>
+        <li>Запрещена реклама и спам</li>
+    </ul>
+</div>
         <div class="forum-container">
             <div id="forum-content">Загрузка...</div>
         </div>
@@ -438,6 +451,57 @@
   color: #b2917e;
   font-size: 15px;
   border: 1px dashed #f0dbd0;
+}
+/* Приветствие */
+.forum-welcome {
+    background: linear-gradient(135deg, #fff5e6 0%, #fff0e0 100%);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 28px;
+    text-align: center;
+    border-right: 5px solid #ff9800;
+}
+
+.forum-welcome p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #4a4a4a;
+    line-height: 1.5;
+}
+
+.forum-welcome p:first-child {
+    font-size: 22px;
+    font-weight: 600;
+    color: #e65100;
+}
+
+/* Правила форума — важный блок, используем оттенки красного */
+.forum-rules {
+    background-color: #fff5f5;
+    border-radius: 12px;
+    padding: 20px 28px;
+    margin-bottom: 36px;
+    border: 1px solid #ffcccc;
+    border-left: 5px solid #e53935;
+}
+
+.forum-rules p {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #c62828;
+}
+
+.forum-rules ul {
+    margin: 0;
+    padding-left: 24px;
+}
+
+.forum-rules li {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #5d5d5d;
+    line-height: 1.5;
 }
     </style>
 </body>
