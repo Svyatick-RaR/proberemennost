@@ -1,3 +1,14 @@
+/* Подключение локального шрифта Tenor Sans */
+@font-face {
+    font-family: 'Tenor Sans';
+    src: url('fonts/Tenor_Sans/TenorSans-Regular.woff2') format('woff2'),
+         url('fonts/Tenor_Sans/TenorSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap; /* Позволяет тексту отображаться, пока шрифт грузится */
+}
+
+
 /* === ГЛОБАЛЬНЫЙ СБРОС СТИЛЕЙ === */
 * {
     margin: 0;
@@ -181,7 +192,7 @@ header {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 40px 0 0;
 }
 
 /* === СТИЛИ ДЛЯ КОНТЕНТА === */
@@ -370,6 +381,8 @@ p {
 /* === КНОПКА ПРИЗЫВА К ДЕЙСТВИЮ === */
 .cta-button {
     background: #d45a3b;
+    display: inline-block;
+    text-decoration: none;
     /* Основной цвет кнопки */
     
     color: white;

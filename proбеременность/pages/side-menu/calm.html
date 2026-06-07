@@ -1,130 +1,519 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>proБеременность - Онлайн форум</title>
-
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="../style-pages.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../style-pages.css" />
     <!-- 👇 СТРОЧКА ДЛЯ ПОДКЛЮЧЕНИЯ ШРИФТА -->
-    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <!-- ШАПКА -->
-<header class="header">
+    <header class="header">
+      <!-- ЛЕВО: пункты меню -->
+      <ul class="nav-links">
+        <li><a href="../../main.html">Главная</a></li>
+        <li><a href="../forum.html">Форум</a></li>
+        <li><a href="../library.html">Библиотека</a></li>
+      </ul>
 
-  <!-- ЛЕВО: пункты меню -->
-  <ul class="nav-links">
-    <li><a href="../../main.html">Главная</a></li>
-    <li><a href="../forum.html">Форум</a></li>
-    <li><a href="../library.html">Библиотека</a></li>
-  </ul>
+      <!-- ЦЕНТР: логотип + текст -->
+      <div class="header-center">
+        <div class="logo-circle">
+          <a href="../../main.html" class="logo-link">
+            <img
+              src="../../img/logo_p.png"
+              alt="proбеременность"
+              loading="lazy"
+              class="logo-image"
+            />
+          </a>
+        </div>
+        <div class="logo-text">Онлайн форум<br />Полезные материалы</div>
+      </div>
 
-  <!-- ЦЕНТР: логотип + текст -->
-  <div class="header-center">
-    <div class="logo-circle">
-      <a href="../../main.html" class="logo-link">
-      <img src="../../img/logo_p.png" alt="proбеременность" loading="lazy" class="logo-image">
-    </a>
-  </div>
-    <div class="logo-text">Онлайн форум<br>Полезные материалы</div>
-  </div>
+      <!-- ПРАВО: бургер -->
+      <input type="checkbox" id="burger-toggle" class="burger-checkbox" />
+      <label for="burger-toggle" class="burger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
 
-  <!-- ПРАВО: бургер -->
-  <input type="checkbox" id="burger-toggle" class="burger-checkbox">
-  <label for="burger-toggle" class="burger-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
+      <!-- БОКОВОЕ МЕНЮ (отдельно) -->
+      <nav class="side-menu">
+        <ul>
+          <li><a href="marshrut.html">Маршрутизация</a></li>
+          <li><a href="my-body.html">Я и мое тело</a></li>
+          <li><a href="HLS.html">Здоровый образ жизни</a></li>
+          <li><a href="#">Спокойствие, только спокойствие</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <!-- БОКОВОЕ МЕНЮ (отдельно) -->
-  <nav class="side-menu">
-    <ul>
-      <li><a href="marshrut.html">Маршрутизация</a></li>
-      <li><a href="my-body.html">Я и мое тело</a></li>
-      <li><a href="HLS.html">Здоровый образ жизни</a></li>
-      <li><a href="#">Спокойствие, только спокойствие</a></li>
-    </ul>
-  </nav>
-
-</header>
-    
     <!-- ОСНОВНОЙ КОНТЕНТ -->
     <main class="container">
-        <h1 class="main-title">Это страница "Спокойствия..."!</h1>
+      <h1 class="main-title">Спокойствие, только спокойствие (Психология)</h1>
 
+      <nav class="nav-section">
+        <h2>Содержание:</h2>
+        <ul class="list-nav">
+          <li><a href="#stress">Как справляться со стрессом</a></li>
+          <li>
+            <a href="#fixed-stress"> Повышенная тревога и как с ней бороться</a>
+          </li>
+          <li><a href="#relatives"> Отношения с мужем и родными</a></li>
+        </ul>
+      </nav>
+      <div class="apilog">
+        <span>Беременность</span> — это не только радость, но и огромная
+        нагрузка на нервную систему. Гормоны скачут, тело меняется, мысли «а всё
+        ли нормально?» не отпускают. <u>Это нормально.</u> <br />В этом разделе
+        — простые, рабочие способы успокоиться, не сойти с ума от тревоги и не
+        разрушить отношения с близкими.
+      </div>
+      <section id="stress">
+        <h2 class="titile-section">Как справляться со стрессом</h2>
+        <h3>Почему беременные острее реагируют на стресс?</h3>
+        <div class="normal-text">
+          Гормоны (прогестерон, эстроген, релаксин) меняют работу нервной
+          системы. То, на что раньше ты не обратила внимания, сейчас может
+          вызвать слёзы или панику. Это не «ты слабая», это физиология.
+        </div>
 
+        <h3>Что работает без таблеток (если стресс лёгкий)</h3>
+        <table class="table-normal" style="margin-bottom: 0">
+          <tr>
+            <th>Способ</th>
+            <th>Как делать</th>
+            <th>Почему помогает</th>
+          </tr>
+          <tr>
+            <td>Дыхание по квадрату</td>
+            <td>
+              Вдох на 4 счёта → задержка 4 счёта → выдох 4 счёта → задержка 4
+              счёта. Повторить 5–10 раз.
+            </td>
+            <td>Замедляет сердцебиение, снижает давление</td>
+          </tr>
+          <tr>
+            <td>Заземление (5-4-3-2-1)</td>
+            <td>
+              Назови вслух: 5 предметов, которые видишь → 4 звука, которые
+              слышишь → 3 прикосновения (ветер, ткань одежды) → 2 запаха → 1
+              вкус (или глоток воды).
+            </td>
+            <td>Отвлекает мозг от тревоги, возвращает в реальность</td>
+          </tr>
+          <tr>
+            <td>Прогулка пешком</td>
+            <td>20–30 минут, без телефона, смотреть по сторонам</td>
+            <td>Снимает мышечное напряжение, снижает кортизол</td>
+          </tr>
+          <tr>
+            <td>Тёплая ванна для ног</td>
+            <td>10 минут перед сном, вода 37–38°C</td>
+            <td>Расслабляет, отвлекает от тревожных мыслей</td>
+          </tr>
+          <tr>
+            <td>Разговор с кем-то, кто умеет слушать</td>
+            <td>Не давать советов, просто выговориться</td>
+            <td>Выплеснуть эмоции наружу — уже половина лечения</td>
+          </tr>
+          <tr>
+            <td>Письмо тревоги</td>
+            <td>
+              Взять бумагу и написать всё, что пугает. Потом смять и выбросить
+              (или сжечь, если безопасно).
+            </td>
+            <td>Выводит тревогу из головы, даёт ей выход</td>
+          </tr>
+        </table>
 
-
-
-
-
-    </main>
-        <!-- ПОДВАЛ САЙТА -->
-<footer class="pregnancy-footer">
-    <div class="pregnancy-footer-inner">
-        
-        <!-- Колонка 1: Контакты -->
-        <div class="pregnancy-footer-col">
-            <div class="pregnancy-footer-title">Связь с нами</div>
-            <ul class="pregnancy-footer-contacts">
-                <li class="pregnancy-footer-email-item">✉️ <a href="proberemennost@mail.ru">proberemennost@mail.ru</a></li>
+        <div class="content-center">
+          <div class="red-flags-body">
+            <h3 class="title-red-flag">Что НЕ помогает (и даже вредит)</h3>
+            <ul class="list-style list-marker-krest">
+              <li>Есть сладкое или жирное, чтобы успокоиться.</li>
+              <li>Сидеть в телефоне, листая тревожные новости или форумы</li>
+              <li>
+                Пить успокоительные без врача (даже «травки» — пустырник,
+                валериану только после гинеколога)
+              </li>
+              <li>
+                Терпеть и не плакать («сдерживание» → скачок давления и
+                напряжение матки)
+              </li>
             </ul>
-            <div class="pregnancy-footer-note">По вопросам работы сайта</div>
+          </div>
         </div>
-        
-        <!-- Колонка 2: Навигация (по центру) -->
-        <div class="pregnancy-footer-col pregnancy-footer-nav-center">
-            <div class="pregnancy-footer-title">Навигация</div>
-            <ul class="pregnancy-footer-menu">
-                <li><a href="../../main.html">Главная</a></li>
-                <li><a href="../forum.html">Форум</a></li>
-                <li><a href="../library.html">Библиотека</a></li>
-            </ul>
-        </div>
-        
-        <!-- Колонка 3: Телефоны -->
-        <div class="pregnancy-footer-col pregnancy-footer-hotlines">
-            <div class="pregnancy-footer-title">Всегда на связи</div>
-            
-            <div class="pregnancy-footer-hotline-row">
-                <div class="pregnancy-footer-hotline-block">
-                    <div class="pregnancy-footer-hotline-number center">103</div>
-                    <div class="pregnancy-footer-hotline-label">Скорая помощь</div>
-                </div>
-                
-                <div class="pregnancy-footer-hotline-block">
-                    <div class="pregnancy-footer-hotline-number center">112</div>
-                    <div class="pregnancy-footer-hotline-label">Экстренная служба</div>
-                </div>
+        <h3>Когда пора к психологу (а не просто «домашние» методы)</h3>
+
+        <div class="mental-support-card">
+          <div class="mental-support-card__columns">
+            <div class="mental-support-card__symptoms">
+              <div class="mental-support-card__symptoms-header">
+                <span class="mental-support-card__symptoms-icon">⚠</span>
+                <span class="mental-support-card__symptoms-heading"
+                  >Если стресс длится больше 2 недель и:</span
+                >
+              </div>
+              <ul
+                class="mental-support-card__list mental-support-card__list--warning"
+              >
+                <li>Не можешь спать даже когда устала</li>
+                <li>Плачешь каждый день (больше часа)</li>
+                <li>Перестала есть или, наоборот, ешь без остановки</li>
+                <li>
+                  Панические атаки (сердце колотится, нечем дышать, трясутся
+                  руки)
+                </li>
+                <li>
+                  Мысли «всё бросить», «я плохая мать», «лучше бы не было»
+                </li>
+              </ul>
             </div>
-            
-            <div class="pregnancy-footer-hotline-divider"></div>
-            
-            <div class="pregnancy-footer-hotline-block">
-                <div class="pregnancy-footer-hotline-number">8-800-200-0-200</div>
-                <div class="pregnancy-footer-hotline-label">Горячая линия для беременных</div>
-                <div class="pregnancy-footer-hotline-note">бесплатно, круглосуточно</div>
+
+            <div class="mental-support-card__help">
+              <div class="mental-support-card__help-header">
+                <span class="mental-support-card__help-icon">📞</span>
+                <span class="mental-support-card__help-heading">Куда идти</span>
+              </div>
+              <ul
+                class="mental-support-card__list mental-support-card__list--help"
+              >
+                <li>Психолог при женской консультации (спроси у гинеколога)</li>
+                <li>
+                  Бесплатный телефон доверия (по всей России:
+                  <strong>8-800-2000-122</strong>)
+                </li>
+                <li>
+                  Перинатальный психолог (можно найти онлайн или в центре
+                  планирования семьи)
+                </li>
+              </ul>
             </div>
+          </div>
         </div>
-        
+      </section>
+
+      <section id="fixed-stress">
+        <h2 class="titile-section">Повышенная тревога и как с ней бороться</h2>
+        <div class="anxiety-block">
+          <h3 class="anxiety-block__title">
+            Что такое «нормальная» тревога беременной?
+          </h3>
+          <p class="anxiety-block__description">
+            Это когда ты переживаешь, но можешь отвлечься и жить дальше.
+          </p>
+
+          <div class="anxiety-block__example">
+            <p class="anxiety-block__example-item">
+              «А правильно ли я питаюсь?» → почитала, спросила врача →
+              успокоилась.
+            </p>
+            <p class="anxiety-block__example-item">
+              «А вдруг с ребёнком что-то не так?» → сделала УЗИ, всё хорошо →
+              полегчало.
+            </p>
+          </div>
+
+          <h3 class="anxiety-block__title anxiety-block__title--danger">
+            Что такое «тревога, которая мешает жить»?
+          </h3>
+          <ul class="anxiety-block__list">
+            <li>не можешь работать или заниматься делами</li>
+            <li>избегаешь выходить из дома</li>
+            <li>постоянно гуглишь симптомы и находишь самое страшное</li>
+            <li>
+              проверяешь шевеления каждый час и паникуешь, если ребёнок спит
+              дольше обычного
+            </li>
+            <li>не веришь хорошим анализам и УЗИ</li>
+          </ul>
+        </div>
+
+
+        <div class="anxiety-steps">
+    <h3 class="anxiety-steps__title">Пошаговая инструкция «Что делать с тревогой»</h3>
+    
+    <div class="anxiety-steps__item">
+        <div class="anxiety-steps__step-header">
+            <span class="anxiety-steps__step-number">Шаг 1.</span>
+            <span class="anxiety-steps__step-name">Признай, что она есть</span>
+        </div>
+        <p class="anxiety-steps__step-text">Не ругай себя: «какая же я истеричка». Скажи себе: <span class="anxiety-steps__highlight">«Мой организм сейчас очень чувствительный, это временно»</span>.</p>
     </div>
     
-    <!-- Нижняя строка (на всю ширину) -->
-    <div class="pregnancy-footer-bottom">
-        <div class="pregnancy-footer-bottom-inner">
-            <div class="pregnancy-footer-copyright">
-                © 2026 Proбеременность. Все права защищены.
+    <div class="anxiety-steps__item">
+        <div class="anxiety-steps__step-header">
+            <span class="anxiety-steps__step-number">Шаг 2.</span>
+            <span class="anxiety-steps__step-name">Отдели факты от фантазий</span>
+        </div>
+        <p class="anxiety-steps__step-text">Возьми лист бумаги. Напиши два столбика:</p>
+        <div class="anxiety-steps__table">
+            <div class="anxiety-steps__table-row">
+                <div class="anxiety-steps__table-col anxiety-steps__table-col--facts">ФАКТЫ (что точно знаю)</div>
+                <div class="anxiety-steps__table-col anxiety-steps__table-col--fantasies">ФАНТАЗИИ (чего боюсь)</div>
             </div>
-            <div class="pregnancy-footer-disclaimer">
-                Данный сайт не заменяет консультацию у врача
+            <div class="anxiety-steps__table-row">
+                <div class="anxiety-steps__table-col">УЗИ в 20 недель — норма</div>
+                <div class="anxiety-steps__table-col">А вдруг к родам что-то пойдёт не так?</div>
+            </div>
+            <div class="anxiety-steps__table-row">
+                <div class="anxiety-steps__table-col">Врач сказал — всё хорошо</div>
+                <div class="anxiety-steps__table-col">А вдруг он что-то скрывает?</div>
+            </div>
+            <div class="anxiety-steps__table-row">
+                <div class="anxiety-steps__table-col">Шевеления есть, но реже</div>
+                <div class="anxiety-steps__table-col">А вдруг ребёнок замер?</div>
+            </div>
+        </div>
+        <p class="anxiety-steps__step-text">Потом перечитай столбик фактов. <span class="anxiety-steps__highlight">Вслух.</span> Это помогает трезво оценить ситуацию.</p>
+    </div>
+    
+    <div class="anxiety-steps__item">
+        <div class="anxiety-steps__step-header">
+            <span class="anxiety-steps__step-number">Шаг 3.</span>
+            <span class="anxiety-steps__step-name">Действуй, а не думай</span>
+        </div>
+        <p class="anxiety-steps__step-text">Тревога любит пустые мысли. <span class="anxiety-steps__highlight">Действие её останавливает</span>:</p>
+        <div class="anxiety-steps__table">
+            <div class="anxiety-steps__table-row">
+                <div class="anxiety-steps__table-col anxiety-steps__table-col--thought">Тревожная мысль</div>
+                <div class="anxiety-steps__table-col anxiety-steps__table-col--action">Что сделать (простое действие)</div>
+            </div>
+            <div class="anxiety-steps__table-row">
+                <div class="anxiety-steps__table-col">«А вдруг у ребёнка что-то с сердцем?»</div>
+                <div class="anxiety-steps__table-col">Попросить врача послушать сердце на приёме.</div>
+            </div>
+            <div class="anxiety-steps__table-row">
+                <div class="anxiety-steps__table-col">«Я не справлюсь с родами»</div>
+                <div class="anxiety-steps__table-col">Записаться на курсы подготовки к родам (или посмотреть бесплатный вебинар).</div>
+            </div>
+            <div class="anxiety-steps__table-row">
+                <div class="anxiety-steps__table-col">«Меня никто не поддерживает»</div>
+                <div class="anxiety-steps__table-col">Написать подруге конкретно: «Мне нужно просто чтобы ты меня обняла / послушала».</div>
             </div>
         </div>
     </div>
-</footer>
-</body>
+    
+    <div class="anxiety-steps__item">
+        <div class="anxiety-steps__step-header">
+            <span class="anxiety-steps__step-number">Шаг 4.</span>
+            <span class="anxiety-steps__step-name">Ограничь информационный шум</span>
+        </div>
+        <ul class="anxiety-steps__deny-list">
+            <li>Не читай страшные истории в соцсетях про роды и беременность</li>
+            <li>Не общайся с теми, кто любит «напугать за жизнь»</li>
+        </ul>
+    </div>
+    
+    <div class="anxiety-steps__item">
+        <div class="anxiety-steps__step-header">
+            <span class="anxiety-steps__step-number">Шаг 5.</span>
+            <span class="anxiety-steps__step-name">Добавь ритуалы спокойствия</span>
+        </div>
+        <p class="anxiety-steps__step-text">Повторяющиеся действия успокаивают мозг. Например:</p>
+        <ul class="anxiety-steps__ritual-list">
+            <li>Каждый вечер — чай с мятой и тёплые носки</li>
+            <li>После каждого обеда — пройтись вокруг дома 5 минут</li>
+            <li>Перед сном — погладить живот и сказать малышу вслух: <span class="anxiety-steps__highlight">«Всё хорошо, мы в безопасности»</span></li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="anxiety-warning">
+    <h3 class="anxiety-warning__title">Когда тревогу нельзя терпеть — надо идти к врачу</h3>
+    
+    <div class="anxiety-warning__table">
+        <div class="anxiety-warning__table-row anxiety-warning__table-row--header">
+            <div class="anxiety-warning__table-cell anxiety-warning__table-cell--header">Признак</div>
+            <div class="anxiety-warning__table-cell anxiety-warning__table-cell--header">Что делать</div>
+        </div>
+        
+        <div class="anxiety-warning__table-row">
+            <div class="anxiety-warning__table-cell">
+                Панические атаки (нечем дышать, страх смерти)
+            </div>
+            <div class="anxiety-warning__table-cell">
+                Обратиться к психиатру. <span class="anxiety-warning__highlight">Есть разрешённые при беременности антидепрессанты.</span>
+            </div>
+        </div>
+        
+        <div class="anxiety-warning__table-row">
+            <div class="anxiety-warning__table-cell">
+                Обсессивные мысли («выключила ли я плиту?» — возвращаюсь 10 раз)
+            </div>
+            <div class="anxiety-warning__table-cell">
+                К психотерапевту.
+            </div>
+        </div>
+        
+        <div class="anxiety-warning__table-row">
+            <div class="anxiety-warning__table-cell">
+                Ритуалы, которые мешают жить (мою руки по 20 раз, боюсь прикосновений)
+            </div>
+            <div class="anxiety-warning__table-cell">
+                <span class="anxiety-warning__highlight">Не терпеть, помочь можно.</span>
+            </div>
+        </div>
+    </div>
+    
+    <p class="anxiety-warning__note">
+        <span class="anxiety-warning__important">Важно:</span> беременные могут принимать некоторые антидепрессанты и успокоительные. 
+        Но <span class="anxiety-warning__highlight">НИ В КОЕМ СЛУЧАЕ не назначай себе сама.</span> Только врач.
+    </p>
+</div>
+      </section>
+      <section id="relatives">
+        <h2 class="titile-section"> Отношения с мужем и родными </h2>
+        <h3 class="title-list ">Почему отношения становятся сложнее</h3>
+        <ul class="list-rools list-side-border no-marker-list">
+            <li>Гормоны делают тебя более ранимой, обидчивой, плаксивой</li>
+            <li>Ты устаёшь физически — меньше сил на терпение и диалог</li>
+            <li>Муж может не понимать, что с тобой происходит (он не видит твоё тело изнутри)</li>
+            <li>Родные (особенно старшее поколение) любят давать советы, даже если их не просят</li>
+        </ul>
+
+
+            <div class="conteiner-center">
+                <h3 class="title-husbent">Как общаться с мужем</h3>
+                <div class="subtitle-husbent">чтобы не ругаться и чувствовать поддержку</div>
+                <ul class="communication-list">
+    <li class="communication-list__item">
+        <div class="communication-list__cross">✘</div>
+        <div class="communication-list__content">
+            <div class="communication-list__title">Ждать, что он сам догадается, что тебе нужно</div>
+            <div class="communication-list__note">мужчины не телепаты</div>
+        </div>
+    </li>
+    <li class="communication-list__item">
+        <div class="communication-list__cross">✘</div>
+        <div class="communication-list__content">
+            <div class="communication-list__title">Говорить намёками</div>
+            <div class="communication-list__note">«Ну что, может, поможешь?»</div>
+        </div>
+    </li>
+    <li class="communication-list__item">
+        <div class="communication-list__cross">✘</div>
+        <div class="communication-list__content">
+            <div class="communication-list__title">Кричать, если он не понимает</div>
+            <div class="communication-list__note">«Ты вообще меня не слушаешь!»</div>
+        </div>
+    </li>
+</ul>
+
+    <h3>Короткая памятка «Спокойствие в кармане»</h3>
+    <table class="table-normal">
+        <tr>
+            <th>Если...</th>
+            <th>То...</th>
+        </tr>
+        <tr>
+            <td>Накрыла тревога</td>
+            <td>Дыши по квадрату.</td>
+        </tr>
+        <tr>
+            <td>Плачешь без остановки</td>
+            <td>Выпей воды, умойся, позвони кому-то доброму.</td>
+        </tr>
+        <tr>
+            <td>Муж не понимает</td>
+            <td>Скажи конкретную просьбу («обними меня», «помой посуду»).</td>
+        </tr>
+        <tr>
+            <td>Родные бесят</td>
+            <td>«Спасибо, я спрошу у врача».</td>
+        </tr>
+        <tr>
+            <td>Страшно за малыша</td>
+            <td>Сделай то, что можешь: анализы, УЗИ. Остальное отпусти.</td>
+        </tr>
+        <tr>
+            <td>Мысли чёрные</td>
+            <td>Иди к психологу (это не стыдно, это смело).</td>
+        </tr>
+    </table>
+
+      </section>
+    </main>
+    <!-- ПОДВАЛ САЙТА -->
+    <footer class="pregnancy-footer">
+      <div class="pregnancy-footer-inner">
+        <!-- Колонка 1: Контакты -->
+        <div class="pregnancy-footer-col">
+          <div class="pregnancy-footer-title">Связь с нами</div>
+          <ul class="pregnancy-footer-contacts">
+            <li class="pregnancy-footer-email-item">
+              ✉️ <a href="proberemennost@mail.ru">proberemennost@mail.ru</a>
+            </li>
+          </ul>
+          <div class="pregnancy-footer-note">По вопросам работы сайта</div>
+        </div>
+
+        <!-- Колонка 2: Навигация (по центру) -->
+        <div class="pregnancy-footer-col pregnancy-footer-nav-center">
+          <div class="pregnancy-footer-title">Навигация</div>
+          <ul class="pregnancy-footer-menu">
+            <li><a href="../../main.html">Главная</a></li>
+            <li><a href="../forum.html">Форум</a></li>
+            <li><a href="../library.html">Библиотека</a></li>
+          </ul>
+        </div>
+
+        <!-- Колонка 3: Телефоны -->
+        <div class="pregnancy-footer-col pregnancy-footer-hotlines">
+          <div class="pregnancy-footer-title">Всегда на связи</div>
+
+          <div class="pregnancy-footer-hotline-row">
+            <div class="pregnancy-footer-hotline-block">
+              <div class="pregnancy-footer-hotline-number center">103</div>
+              <div class="pregnancy-footer-hotline-label">Скорая помощь</div>
+            </div>
+
+            <div class="pregnancy-footer-hotline-block">
+              <div class="pregnancy-footer-hotline-number center">112</div>
+              <div class="pregnancy-footer-hotline-label">
+                Экстренная служба
+              </div>
+            </div>
+          </div>
+
+          <div class="pregnancy-footer-hotline-divider"></div>
+
+          <div class="pregnancy-footer-hotline-block">
+            <div class="pregnancy-footer-hotline-number">8-800-200-0-200</div>
+            <div class="pregnancy-footer-hotline-label">
+              Горячая линия для беременных
+            </div>
+            <div class="pregnancy-footer-hotline-note">
+              бесплатно, круглосуточно
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Нижняя строка (на всю ширину) -->
+      <div class="pregnancy-footer-bottom">
+        <div class="pregnancy-footer-bottom-inner">
+          <div class="pregnancy-footer-copyright">
+            © 2026 Proбеременность. Все права защищены.
+          </div>
+          <div class="pregnancy-footer-disclaimer">
+            Данный сайт не заменяет консультацию у врача
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

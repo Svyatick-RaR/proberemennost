@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Админ-панель — proБеременность</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, sans-serif; background: #fefaf8; padding: 40px 20px; }
+        .admin-container { max-width: 1200px; margin: 0 auto; }
+        .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #e0c8bc; }
+        .admin-header h1 { color: #e07c5c; font-size: 28px; }
+        .logout-btn { background: #e07c5c; color: white; border: none; padding: 8px 20px; border-radius: 40px; cursor: pointer; }
+        .section { background: white; border-radius: 24px; padding: 24px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .section h2 { color: #1a1a1a; margin-bottom: 20px; font-size: 20px; }
+        .theme-list, .comment-list { list-style: none; }
+        .theme-item, .comment-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #eee0d8; }
+        .theme-name { font-size: 16px; color: #2d3e50; }
+        .delete-btn { background: none; border: none; color: #e07c5c; cursor: pointer; font-size: 18px; padding: 4px 12px; border-radius: 20px; transition: 0.2s; }
+        .delete-btn:hover { background: #fee; color: #c96b4e; }
+        .add-form { display: flex; gap: 12px; margin-top: 20px; }
+        .add-form input { flex: 1; padding: 12px 16px; border: 1px solid #e0c8bc; border-radius: 40px; font-size: 15px; }
+        .add-form button { background: #e07c5c; color: white; border: none; padding: 12px 24px; border-radius: 40px; cursor: pointer; }
+        .login-form { max-width: 400px; margin: 100px auto; background: white; padding: 40px; border-radius: 24px; text-align: center; }
+        .login-form input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #e0c8bc; border-radius: 40px; }
+        .login-form button { background: #e07c5c; color: white; border: none; padding: 12px; width: 100%; border-radius: 40px; cursor: pointer; }
+        .empty { color: #8a7a72; padding: 20px 0; text-align: center; }
+    </style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+    const PASSWORD = "mama2026";  // ← смените пароль
+    const API_URL = "/api/comments";
+    const THEMES_URL = "/data/themes.json";
+    
+    let isLoggedIn = localStorage.getItem("admin_logged") === "true";
+    
+    function checkAuth() {
+        if (!isLoggedIn) showLogin();
+        else loadAdminPanel();
+    }
+    
+    function showLogin() {
+        document.getElementById("app").innerHTML = `
+            <div class="login-form">
+                <h2>Вход в админ-панель</h2>
+                <input type="password" id="password" placeholder="Пароль">
+                <button onclick="login()">Войти</button>
+            </div>
+        `;
+    }
+    
+    window.login = function() {
+        const pwd = document.getElementById("password").value;
+        if (pwd === PASSWORD) {
+            localStorage.setItem("admin_logged", "true");
+            isLoggedIn = true;
+            loadAdminPanel();
+        } else {
+            alert("Неверный пароль");
+        }
+    };
+    
+    window.logout = function() {
+        localStorage.removeItem("admin_logged");
+        isLoggedIn = false;
+        showLogin();
+    };
+    
+    async function loadAdminPanel() {
+        // Загружаем темы
+        const themesRes = await fetch(THEMES_URL);
+        let themes = await themesRes.json();
+        
+        // Загружаем комментарии
+        const commentsRes = await fetch(API_URL);
+        let comments = await commentsRes.json();
+        
+        let html = `
+            <div class="admin-container">
+                <div class="admin-header">
+                    <h1>Админ-панель форума</h1>
+                    <button class="logout-btn" onclick="logout()">Выйти</button>
+                </div>
+                
+                <div class="section">
+                    <h2>📌 Управление темами</h2>
+                    <ul class="theme-list" id="theme-list">
+        `;
+        
+        for (let i = 0; i < themes.length; i++) {
+            html += `
+                <li class="theme-item">
+                    <span class="theme-name">${escapeHtml(themes[i])}</span>
+                    <button class="delete-btn" onclick="deleteTheme(${i})">✗ Удалить</button>
+                </li>
+            `;
+        }
+        
+        html += `
+                    </ul>
+                    <div class="add-form">
+                        <input type="text" id="new-theme" placeholder="Название новой темы">
+                        <button onclick="addTheme()">+ Добавить тему</button>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>💬 Управление комментариями</h2>
+                    <ul class="comment-list" id="comment-list">
+        `;
+        
+        if (comments.length === 0) {
+            html += `<div class="empty">Нет комментариев</div>`;
+        } else {
+            for (let i = 0; i < comments.length; i++) {
+                const c = comments[i];
+                html += `
+                    <li class="comment-item">
+                        <div>
+                            <strong>${escapeHtml(c.name)}</strong> 
+                            <span style="color:#8a7a72; font-size:13px;">${c.date || ''}</span><br>
+                            <span style="color:#e07c5c;">[${escapeHtml(c.theme)}]</span>
+                            <span> ${escapeHtml(c.text)}</span>
+                        </div>
+                        <button class="delete-btn" onclick="deleteComment(${i})">✗ Удалить</button>
+                    </li>
+                `;
+            }
+        }
+        
+        html += `
+                    </ul>
+                </div>
+            </div>
+        `;
+        
+        document.getElementById("app").innerHTML = html;
+    }
+    
+    window.addTheme = async function() {
+        const input = document.getElementById("new-theme");
+        const themeName = input.value.trim();
+        if (!themeName) return alert("Введите название темы");
+        
+        const response = await fetch(THEMES_URL);
+        let themes = await response.json();
+        themes.push(themeName);
+        
+        // Сохраняем через API (нужен будет endpoint для themes)
+        await fetch("/api/themes", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(themes)
+        });
+        
+        input.value = "";
+        loadAdminPanel();
+    };
+    
+    window.deleteTheme = async function(index) {
+        if (!confirm("Удалить тему и все комментарии к ней?")) return;
+        
+        const themesRes = await fetch(THEMES_URL);
+        let themes = await themesRes.json();
+        const deletedTheme = themes[index];
+        themes.splice(index, 1);
+        
+        await fetch("/api/themes", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(themes)
+        });
+        
+        // Удаляем комментарии этой темы
+        const commentsRes = await fetch(API_URL);
+        let comments = await commentsRes.json();
+        const newComments = comments.filter(c => c.theme !== deletedTheme);
+        
+        await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newComments)
+        });
+        
+        loadAdminPanel();
+    };
+    
+    window.deleteComment = async function(index) {
+        if (!confirm("Удалить комментарий?")) return;
+        
+        const res = await fetch(API_URL);
+        let comments = await res.json();
+        comments.splice(index, 1);
+        
+        await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(comments)
+        });
+        
+        loadAdminPanel();
+    };
+    
+    function escapeHtml(str) {
+        if (!str) return "";
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
+    
+    checkAuth();
+</script>
+</body>
+</html>

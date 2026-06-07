@@ -1,131 +1,553 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>proБеременность - Онлайн форум</title>
-
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="style-pages.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="style-pages.css" />
     <!-- 👇 СТРОЧКА ДЛЯ ПОДКЛЮЧЕНИЯ ШРИФТА -->
-    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <!-- ШАПКА -->
-<header class="header">
+    <header class="header">
+      <!-- ЛЕВО: пункты меню -->
+      <ul class="nav-links">
+        <li><a href="../main.html">Главная</a></li>
+        <li><a href="forum.html">Форум</a></li>
+        <li><a href="#">Библиотека</a></li>
+      </ul>
 
-  <!-- ЛЕВО: пункты меню -->
-  <ul class="nav-links">
-    <li><a href="../main.html">Главная</a></li>
-    <li><a href="forum.html">Форум</a></li>
-    <li><a href="#">Библиотека</a></li>
-  </ul>
+      <!-- ЦЕНТР: логотип + текст -->
+      <div class="header-center">
+        <div class="logo-circle">
+          <a href="../main.html" class="logo-link">
+            <img
+              src="../img/logo_p.png"
+              alt="proбеременность"
+              loading="lazy"
+              class="logo-image"
+            />
+          </a>
+        </div>
+        <div class="logo-text">Онлайн форум<br />Полезные материалы</div>
+      </div>
 
-  <!-- ЦЕНТР: логотип + текст -->
-  <div class="header-center">
-    <div class="logo-circle">
-      <a href="../main.html" class="logo-link">
-      <img src="../img/logo_p.png" alt="proбеременность" loading="lazy" class="logo-image">
-    </a>
-  </div>
-    <div class="logo-text">Онлайн форум<br>Полезные материалы</div>
-  </div>
+      <!-- ПРАВО: бургер -->
+      <input type="checkbox" id="burger-toggle" class="burger-checkbox" />
+      <label for="burger-toggle" class="burger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
 
-  <!-- ПРАВО: бургер -->
-  <input type="checkbox" id="burger-toggle" class="burger-checkbox">
-  <label for="burger-toggle" class="burger-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
+      <!-- БОКОВОЕ МЕНЮ (отдельно) -->
+      <nav class="side-menu">
+        <ul>
+          <li><a href="side-menu/marshrut.html">Маршрутизация</a></li>
+          <li><a href="side-menu/my-body.html">Я и мое тело</a></li>
+          <li><a href="side-menu/HLS.html">Здоровый образ жизни</a></li>
+          <li>
+            <a href="side-menu/calm.html">Спокойствие, только спокойствие</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-  <!-- БОКОВОЕ МЕНЮ (отдельно) -->
-  <nav class="side-menu">
-    <ul>
-      <li><a href="side-menu/marshrut.html">Маршрутизация</a></li>
-      <li><a href="side-menu/my-body.html">Я и мое тело</a></li>
-      <li><a href="side-menu/HLS.html">Здоровый образ жизни</a></li>
-      <li><a href="side-menu/calm.html">Спокойствие, только спокойствие</a></li>
-    </ul>
-  </nav>
-
-</header>
-    
     <!-- ОСНОВНОЙ КОНТЕНТ -->
     <main class="container">
-        <h1 class="main-title">Это страница "Библиотека будующей мамы"!</h1>
+      <h1 class="main-title">Библиотека будующей мамы</h1>
+      <nav class="nav-section">
+        <h2>Содержание:</h2>
+        <ul class="list-nav">
+          <li><a href="#marshrut">Маршрутизация</a></li>
+          <li><a href="#my-body">Я и моё тело</a></li>
+          <li><a href="#hls">Здоровый образ жизни</a></li>
+          <li><a href="#calm">Психоэмоциональная поддержка</a></li>
+          <li><a href="#etc">Другое</a></li>
+        </ul>
+      </nav>
+      <section id="marshrut">
+        <div class="resource-links">
+          <h2 class="resource-links__title">🗺️ Маршрутизация</h2>
+          <p class="resource-links__subtitle">
+            что, когда и куда идти, чек-листы, госуслуги
+          </p>
 
+          <ul class="resource-links__list">
+            <li class="resource-links__item">
+              <a
+                href="https://apps.apple.com/ru/app/%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D1%8C-%D0%B1%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%80%D0%BE%D0%B4%D1%8B/id6449901954"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="resource-links__link"
+              >
+                <span class="resource-links__link-title"
+                  >Приложение «Календарь беременности» (BabyLenta)</span
+                >
+                <span class="resource-links__link-desc"
+                  >календарь по неделям, напоминания о визитах к врачу и сдаче
+                  анализов, счётчик шевелений</span
+                >
+              </a>
+            </li>
 
+            <li class="resource-links__item">
+              <a
+                href="https://infourok.ru/magazin-materialov/chek-list-v-rodilnyj-dom-spisok-neobhodimogo-v-roddom-854118"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="resource-links__link"
+              >
+                <span class="resource-links__link-title"
+                  >Чек-лист в роддом (Инфоурок, вариант 1)</span
+                >
+                <span class="resource-links__link-desc"
+                  >структурированный PDF: документы, вещи для мамы, для малыша,
+                  на выписку</span
+                >
+              </a>
+            </li>
 
+            <li class="resource-links__item">
+              <a
+                href="https://infourok.ru/magazin-materialov/chek-list-dlya-budushih-mam-chto-vzyat-s-soboj-v-roddom-334032"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="resource-links__link"
+              >
+                <span class="resource-links__link-title"
+                  >Чек-лист в роддом (Инфоурок, вариант 2)</span
+                >
+                <span class="resource-links__link-desc">редактируемый PDF</span>
+              </a>
+            </li>
 
+            <li class="resource-links__item">
+              <a
+                href="https://elevit.ru/chek-list"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="resource-links__link"
+              >
+                <span class="resource-links__link-title"
+                  >Чек-лист в роддом (Элевит)</span
+                >
+                <span class="resource-links__link-desc"
+                  >с разделами: документы, комфорт мамы, для малыша,
+                  выписка</span
+                >
+              </a>
+            </li>
 
+            <li class="resource-links__item">
+              <a
+                href="https://diseases.medelement.com/material/smfm-09-06-22/786873531655215280"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="resource-links__link"
+              >
+                <span class="resource-links__link-title"
+                  >Чек-листы для 4-го триместра (послеродовой период)</span
+                >
+                <span class="resource-links__link-desc"
+                  >официальный документ от SMFM (перевод MedElement)</span
+                >
+              </a>
+            </li>
 
+            <li class="resource-links__item">
+              <a
+                href="https://сохрани.рф"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="resource-links__link"
+              >
+                <span class="resource-links__link-title"
+                  >Сайт «сохрани.рф»</span
+                >
+                <span class="resource-links__link-desc"
+                  >господдержка для беременных и семей в трудной жизненной
+                  ситуации</span
+                >
+              </a>
+            </li>
+
+            <li class="resource-links__item">
+              <a
+                href="https://основано.рф"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="resource-links__link"
+              >
+                <span class="resource-links__link-title"
+                  >Сайт «основано.рф»</span
+                >
+                <span class="resource-links__link-desc"
+                  >все региональные меры поддержки для родителей и цифровые
+                  сервисы</span
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="my-body">          
+      <!-- Я и моё тело -->
+<div class="resource-links">
+    <h3 class="resource-links__title">🧘 Я и моё тело</h3>
+    <p class="resource-links__subtitle">физическая активность, упражнения, дыхание, лайфхаки</p>
+    
+    <ul class="resource-links__list">
+        
+        <li class="resource-links__item">
+            <a href="https://irkgpc.gosuslugi.ru/novosti/dyhatelnaya-gimnastika-uchimsya-pravilno-dyshat-vo-vremya-beremennosti.html" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">Дыхательная гимнастика (Госуслуги)</span>
+                <span class="resource-links__link-desc">пошаговая техника дыхания диафрагмой и грудью</span>
+            </a>
+        </li>
+        
+        <li class="resource-links__item">
+            <a href="https://www.huggies.kg/ru-kg/stati/beremennost-stati/beremennost/pravilnoe-dyhanie" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">Правильное дыхание при родах (Huggies)</span>
+                <span class="resource-links__link-desc">подробное руководство по дыханию на схватках и потугах</span>
+            </a>
+        </li>
+        
+        <li class="resource-links__item">
+            <a href="https://1drv.ms/b/s!AgW_LiHeCJcNpCaDoPNLL_4OJrTq" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">ЛФК при беременности (справочник, PDF)</span>
+                <span class="resource-links__link-desc">таблицы упражнений по триместрам с дыхательными техниками</span>
+            </a>
+        </li>
+        
+        <li class="resource-links__item">
+            <a href="https://www.9months.ru/psihologia/6781/10-sposobov-rasslabitsya-vo-vremya-beremennosti" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">10 способов расслабиться во время беременности</span>
+                <span class="resource-links__link-desc">свекольный сок, самовнушение, йога смеха, музыка Моцарта</span>
+            </a>
+        </li>
+        
+        <li class="resource-links__item">
+            <a href="https://www.babyblog.ru/community/post/beremennost/3176543" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">7 неочевидных лайфхаков для счастливой беременности</span>
+                <span class="resource-links__link-desc">«матрёшка-гардероб», спасательный чемоданчик в сумке, антистресс-бокс</span>
+            </a>
+        </li>
+        
+        <li class="resource-links__item">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/?term=biomechanical+interventions+childbirth" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">Обзор NIH: биодинамические интервенции в родах (PubMed)</span>
+                <span class="resource-links__link-desc">как смена позы тела может облегчить роды</span>
+            </a>
+        </li>
+        <li class="resource-links__item">
+    <div class="resource-links__memo">
+        <div class="resource-links__memo-preview">
+            <img src="../img/memos/jpg/memos6.jpg" alt="Памятка о грудном вскармливании">
+        </div>
+        <div class="resource-links__memo-info">
+            <div class="resource-links__memo-title">Грудное вскармливание — лучшая забота о малыше</div>
+            <div class="resource-links__memo-desc">Как правильно кормить, чего избегать, советы по этапам</div>
+        </div>
+        <a href="../img/memos/pdf/memos 6.pdf" class="resource-links__memo-download" download>Скачать PDF</a>
+    </div>
+</li>
+    </ul>
+</div>
+
+      </section>
+      <section id="hls">          
+      <!-- Здоровый образ жизни -->
+<div class="resource-links">
+    <h3 class="resource-links__title">🥗 Здоровый образ жизни</h3>
+    <p class="resource-links__subtitle">питание, витамины, медицинские аспекты</p>
+    
+    <ul class="resource-links__list">
+        
+        <li class="resource-links__item">
+            <a href="https://www.09.rospotrebnadzor.ru/txt/10640" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">Памятка Роспотребнадзора о рационе беременных</span>
+                <span class="resource-links__link-desc">что добавить во 2-м триместре, почему ограничить соль и сахар</span>
+            </a>
+        </li>
+        
+        <li class="resource-links__item">
+            <a href="https://miac.zdrav76.ru/2025/03/03/%d0%9d%d0%b5%d0%b4%d0%b5%d0%bb%d1%8f-%d0%be%d1%82%d0%b2%d0%b5%d1%82%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%be%d0%b3%d0%be-%d0%be%d1%82%d0%bd%d0%be%d1%88%d0%b5%d0%bd%d0%b8%d1%8f-%d0%ba-%d1%80%d0%b5/#branding" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">Статья Минздрава «Неделя ответственного отношения к репродуктивному здоровью»</span>
+                <span class="resource-links__link-desc">про фолиевую кислоту, йод и вредные привычки</span>
+            </a>
+        </li>
+        
+        <li class="resource-links__item">
+            <a href="https://www.elibrary.ru/item.asp?id=67382901" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">Научная статья о лютеине при беременности (eLibrary, 2024)</span>
+                <span class="resource-links__link-desc">почему антиоксидант (шпинат, капуста, яйца) важен для мозга плода</span>
+            </a>
+        </li>
+        
+        <li class="resource-links__item">
+            <a href="https://rustore.ru/catalog/app/com.ourbaby" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">Приложение «Наш ребёнок» (RuStore)</span>
+                <span class="resource-links__link-desc">раздел для беременных: ответы на вопросы «можно ли кофе», «можно ли в баню» и др.</span>
+            </a>
+        </li>
+        
+        <li class="resource-links__item">
+          <div class="resource-links__memo">
+            <div class="resource-links__memo-preview">
+            <img src="../img/memos/jpg/memos1.jpg" alt="Памятка о питании">
+          </div>
+          <div class="resource-links__memo-info">
+            <div class="resource-links__memo-title">Едим с любовью и смыслом</div>
+            <div class="resource-links__memo-desc">Что нельзя, что можно и полезно, советы по триместрам</div>
+          </div>
+            <a href="../img/memos/pdf/memos 1.pdf" class="resource-links__memo-download" download>Скачать PDF</a>
+          </div>
+        </li>
+        <li class="resource-links__item">
+    <div class="resource-links__memo">
+        <div class="resource-links__memo-preview">
+            <img src="../img/memos/jpg/memos2.jpg" alt="Памятка о движении">
+        </div>
+        <div class="resource-links__memo-info">
+            <div class="resource-links__memo-title">Движение — это жизнь, а не обязанность</div>
+            <div class="resource-links__memo-desc">Чего избегать, что полезно, советы по триместрам</div>
+        </div>
+        <a href="../img/memos/pdf/memos 2.pdf" class="resource-links__memo-download" download>Скачать PDF</a>
+    </div>
+</li>
+<li class="resource-links__item">
+    <div class="resource-links__memo">
+        <div class="resource-links__memo-preview">
+            <img src="../img/memos/jpg/memos4.jpg" alt="Памятка о здоровье">
+        </div>
+        <div class="resource-links__memo-info">
+            <div class="resource-links__memo-title">Забота о здоровье — лучшая защита</div>
+            <div class="resource-links__memo-desc">Чего избегать, что полезно, советы по триместрам</div>
+        </div>
+        <a href="../img/memos/pdf/memos 4.pdf" class="resource-links__memo-download" download>Скачать PDF</a>
+    </div>
+</li>
+<li class="resource-links__item">
+    <div class="resource-links__memo">
+        <div class="resource-links__memo-preview">
+            <img src="../img/memos/jpg/memos5.jpg" alt="Памятка о подготовке к родам">
+        </div>
+        <div class="resource-links__memo-info">
+            <div class="resource-links__memo-title">Готовимся к родам — ваш личный план</div>
+            <div class="resource-links__memo-desc">Чего избегать, что полезно, советы по срокам</div>
+        </div>
+        <a href="../img/memos/pdf/memos 5.pdf" class="resource-links__memo-download" download>Скачать PDF</a>
+    </div>
+</li>
+
+    </ul>
+</div>
+      </section>
+      <section id="calm">          
+      <div class="resource-links">
+    <h3 class="resource-links__title">🧠 Психоэмоциональная поддержка</h3>
+    <p class="resource-links__subtitle">дневники, психология, поддержка, настроение</p>
+    
+    <ul class="resource-links__list">
+        
+        <li class="resource-links__item">
+            <a href="https://litres.com/book/marina-budaeva/moya-osoznannaya-beremennost-psihologicheskiy-dnevnik-dlya-69802780/" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">«Моя Осознанная Беременность» – психологический дневник (ЛитРес)</span>
+                <span class="resource-links__link-desc">Марина Будаева, PDF, fb2, epub</span>
+            </a>
+        </li>
+        
+        <li class="resource-links__item">
+            <a href="https://aldebaran.ru/author/budaeva_marina/kniga_moya_osoznannaya_beremennost_psihologich/" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">«Моя Осознанная Беременность» – психологический дневник (Aldebaran)</span>
+                <span class="resource-links__link-desc">альтернативная ссылка для скачивания</span>
+            </a>
+        </li>
+        
+        <li class="resource-links__item">
+            <a href="https://cyberleninka.ru/article/n/sistema-psihologicheskogo-soprovozhdeniya-beremennosti-i-formirovanie-osoznannogo-materinstva-posredstvom-psihologicheskogo" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">Жиляев А.Г., Палачева Т.И. «Система психологического сопровождения беременности...»</span>
+                <span class="resource-links__link-desc">Казанский педагогический журнал. – 2022. – № 1</span>
+            </a>
+        </li>
+        
+        <li class="resource-links__item">
+            <a href="https://cyberleninka.ru/article/n/vliyanie-psihologicheskoy-podderzhki-vo-vremya-beremennosti-na-effektivnost-akusherskoy-pomoschi" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">Ходжамбердиева Г. и др. «Влияние психологической поддержки во время беременности...»</span>
+                <span class="resource-links__link-desc">Парадигма. – 2025. – № 11-3</span>
+            </a>
+        </li>
+        
+        <li class="resource-links__item">
+            <a href="https://mel.fm/9-mesyatsev/7845930-a-slabo-vydokhnut-popoy-absurdnyye-sovety-primety-i-istorii-s-forumov-dlya-beremennykh" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">«А слабо выдохнуть попой?» — смешные истории с форумов для беременных</span>
+                <span class="resource-links__link-desc">для поднятия настроения</span>
+            </a>
+        </li>
+        <li class="resource-links__item">
+    <div class="resource-links__memo">
+        <div class="resource-links__memo-preview">
+            <img src="../img/memos/jpg/memos3.jpg" alt="Буклет Спокойствие в душе, часть 1">
+        </div>
+        <div class="resource-links__memo-info">
+            <div class="resource-links__memo-title">Буклет «Спокойствие в душе» (часть 1)</div>
+            <div class="resource-links__memo-desc">Влияние стресса на маму и малыша, признаки тревоги</div>
+        </div>
+        <a href="../img/memos/pdf/memos 3.pdf" class="resource-links__memo-download" download>Скачать PDF</a>
+    </div>
+</li>
+<li class="resource-links__item">
+    <div class="resource-links__memo">
+        <div class="resource-links__memo-preview">
+            <img src="../img/memos/jpg/memos3-1.jpg" alt="Буклет Спокойствие в душе, часть 2">
+        </div>
+        <div class="resource-links__memo-info">
+            <div class="resource-links__memo-title">Буклет «Спокойствие в душе» (часть 2)</div>
+            <div class="resource-links__memo-desc">Чего избегать, полезные практики, советы по триместрам</div>
+        </div>
+        <a href="../img/memos/pdf/memos 3-1.pdf" class="resource-links__memo-download" download>Скачать PDF</a>
+    </div>
+</li>
+        
+    </ul>
+</div>
+      </section>
+      <section id="etc">          
+      <div class="resource-links">
+    <h3 class="resource-links__title">📚 Другое</h3>
+    <p class="resource-links__subtitle">образование, научные обзоры, полезные сайты</p>
+    
+    <ul class="resource-links__list">
+        
+        <li class="resource-links__item">
+            <a href="https://vauparenter.ru" target="_blank" rel="noopener noreferrer" class="resource-links__link">
+                <span class="resource-links__link-title">Сайт «Вау, родители!»</span>
+                <span class="resource-links__link-desc">интерактивный справочник с рекомендациями по питанию, отдыху и визитам к врачу</span>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+      </section>
 
     </main>
+
+
+
+<div id="memoLightbox" class="memo-lightbox">
+        <img id="lightboxImg" src="" alt="Увеличенное изображение">
+    </div>
+
+
+<script>
+    // Увеличение превью памятки при клике
+    const previews = document.querySelectorAll('.resource-links__memo-preview');
+    const lightbox = document.getElementById('memoLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
     
- <!-- ПОДВАЛ САЙТА -->
-<footer class="pregnancy-footer">
-    <div class="pregnancy-footer-inner">
-        
+    previews.forEach(preview => {
+        preview.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const img = this.querySelector('img');
+            if (img) {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            }
+        });
+    });
+    
+    lightbox.addEventListener('click', function() {
+        this.classList.remove('active');
+    });
+    
+    // Закрытие по клавише Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+        }
+    });
+</script>
+
+
+
+
+
+
+    <!-- ПОДВАЛ САЙТА -->
+    <footer class="pregnancy-footer">
+      <div class="pregnancy-footer-inner">
         <!-- Колонка 1: Контакты -->
         <div class="pregnancy-footer-col">
-            <div class="pregnancy-footer-title">Связь с нами</div>
-            <ul class="pregnancy-footer-contacts">
-                <li class="pregnancy-footer-email-item">✉️ <a href="proberemennost@mail.ru">proberemennost@mail.ru</a></li>
-            </ul>
-            <div class="pregnancy-footer-note">По вопросам работы сайта</div>
+          <div class="pregnancy-footer-title">Связь с нами</div>
+          <ul class="pregnancy-footer-contacts">
+            <li class="pregnancy-footer-email-item">
+              ✉️ <a href="proberemennost@mail.ru">proberemennost@mail.ru</a>
+            </li>
+          </ul>
+          <div class="pregnancy-footer-note">По вопросам работы сайта</div>
         </div>
-        
+
         <!-- Колонка 2: Навигация (по центру) -->
         <div class="pregnancy-footer-col pregnancy-footer-nav-center">
-            <div class="pregnancy-footer-title">Навигация</div>
-            <ul class="pregnancy-footer-menu">
-                <li><a href="../main.html">Главная</a></li>
-                <li><a href="forum.html">Форум</a></li>
-                <li><a href="#">Библиотека</a></li>
-            </ul>
+          <div class="pregnancy-footer-title">Навигация</div>
+          <ul class="pregnancy-footer-menu">
+            <li><a href="../main.html">Главная</a></li>
+            <li><a href="forum.html">Форум</a></li>
+            <li><a href="#">Библиотека</a></li>
+          </ul>
         </div>
-        
+
         <!-- Колонка 3: Телефоны -->
         <div class="pregnancy-footer-col pregnancy-footer-hotlines">
-            <div class="pregnancy-footer-title">Всегда на связи</div>
-            
-            <div class="pregnancy-footer-hotline-row">
-                <div class="pregnancy-footer-hotline-block">
-                    <div class="pregnancy-footer-hotline-number center">103</div>
-                    <div class="pregnancy-footer-hotline-label">Скорая помощь</div>
-                </div>
-                
-                <div class="pregnancy-footer-hotline-block">
-                    <div class="pregnancy-footer-hotline-number center">112</div>
-                    <div class="pregnancy-footer-hotline-label">Экстренная служба</div>
-                </div>
-            </div>
-            
-            <div class="pregnancy-footer-hotline-divider"></div>
-            
+          <div class="pregnancy-footer-title">Всегда на связи</div>
+
+          <div class="pregnancy-footer-hotline-row">
             <div class="pregnancy-footer-hotline-block">
-                <div class="pregnancy-footer-hotline-number">8-800-200-0-200</div>
-                <div class="pregnancy-footer-hotline-label">Горячая линия для беременных</div>
-                <div class="pregnancy-footer-hotline-note">бесплатно, круглосуточно</div>
+              <div class="pregnancy-footer-hotline-number center">103</div>
+              <div class="pregnancy-footer-hotline-label">Скорая помощь</div>
             </div>
+
+            <div class="pregnancy-footer-hotline-block">
+              <div class="pregnancy-footer-hotline-number center">112</div>
+              <div class="pregnancy-footer-hotline-label">
+                Экстренная служба
+              </div>
+            </div>
+          </div>
+
+          <div class="pregnancy-footer-hotline-divider"></div>
+
+          <div class="pregnancy-footer-hotline-block">
+            <div class="pregnancy-footer-hotline-number">8-800-200-0-200</div>
+            <div class="pregnancy-footer-hotline-label">
+              Горячая линия для беременных
+            </div>
+            <div class="pregnancy-footer-hotline-note">
+              бесплатно, круглосуточно
+            </div>
+          </div>
         </div>
-        
-    </div>
-    
-    <!-- Нижняя строка (на всю ширину) -->
-    <div class="pregnancy-footer-bottom">
+      </div>
+
+      <!-- Нижняя строка (на всю ширину) -->
+      <div class="pregnancy-footer-bottom">
         <div class="pregnancy-footer-bottom-inner">
-            <div class="pregnancy-footer-copyright">
-                © 2026 Proбеременность. Все права защищены.
-            </div>
-            <div class="pregnancy-footer-disclaimer">
-                Данный сайт не заменяет консультацию у врача
-            </div>
+          <div class="pregnancy-footer-copyright">
+            © 2026 Proбеременность. Все права защищены.
+          </div>
+          <div class="pregnancy-footer-disclaimer">
+            Данный сайт не заменяет консультацию у врача
+          </div>
         </div>
-    </div>
-</footer>
-</body>
+      </div>
+    </footer>
+  </body>
 </html>

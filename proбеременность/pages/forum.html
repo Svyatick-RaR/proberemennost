@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>proБеременность - Онлайн форум</title>
-
+    <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="style-pages.css">
     <!-- 👇 СТРОЧКА ДЛЯ ПОДКЛЮЧЕНИЯ ШРИФТА -->
@@ -59,6 +59,122 @@
 
 
 
+
+  <div class="forum-container">
+    <div id="forum-content">Загрузка...</div>
+</div>
+
+<script>
+ 
+    const API_URL = '/api/comments';
+    let currentTheme = "";
+
+    // Загружаем темы из JSON-файла (как и раньше)
+    async function loadThemes() {
+        const response = await fetch('/data/themes.json');
+        const themes = await response.json();
+        
+        let html = `<h2 style="margin-top: 20px; margin-bottom: 20px;">Темы обсуждений</h2><div class="themes-list">`;
+        for (const theme of themes) {
+            const safeTheme = theme.replace(/'/g, "\\'");
+            html += `<button class="theme-btn" onclick="loadComments('${safeTheme}')">${theme}</button>`;
+        }
+        html += `</div><div id="comments-section" style="display:none;"><h3 id="current-theme"></h3><div id="comments-list"></div></div>`;
+        document.getElementById("forum-content").innerHTML = html;
+    }
+    
+    // Загружаем комментарии для выбранной темы
+    window.loadComments = async function(theme) {
+        currentTheme = theme;
+        const response = await fetch(API_URL);
+        const allComments = await response.json();
+        const themeComments = allComments.filter(c => c.theme === theme);
+        
+        let commentsHtml = `<div class="comment-list">`;
+        if (themeComments.length === 0) {
+            commentsHtml += `<p class="no-comments">Пока нет комментариев. Будьте первым!</p>`;
+        } else {
+            for (const comment of themeComments) {
+                commentsHtml += `<div class="comment-item">
+                    <strong>${escapeHtml(comment.name)}</strong>
+                    <span class="comment-date">${comment.date || ''}</span>
+                    <p>${escapeHtml(comment.text)}</p>
+                </div>`;
+            }
+        }
+        commentsHtml += `</div>`;
+        
+        commentsHtml += `<div class="comment-form">
+            <h4>Написать комментарий</h4>
+            <input type="text" id="comment-name" placeholder="Ваше имя" required>
+            <textarea id="comment-text" rows="3" placeholder="Ваш комментарий" required></textarea>
+            <button onclick="sendComment()">Отправить</button>
+        </div>`;
+        
+        document.getElementById("comments-section").style.display = "block";
+        document.getElementById("current-theme").innerText = theme;
+        document.getElementById("comments-list").innerHTML = commentsHtml;
+        window.scrollTo({ top: document.getElementById("comments-section").offsetTop, behavior: "smooth" });
+    };
+    
+    // Отправка комментария через API
+    window.sendComment = async function() {
+        const name = document.getElementById("comment-name").value.trim();
+        const text = document.getElementById("comment-text").value.trim();
+        if (!name || !text) {
+            alert("Заполните имя и комментарий");
+            return;
+        }
+        
+        const newComment = {
+            theme: currentTheme,
+            name: name,
+            text: text,
+            date: new Date().toLocaleString()
+        };
+        
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newComment)
+        });
+        
+        if (response.ok) {
+            // Очищаем форму и перезагружаем комментарии
+            document.getElementById("comment-name").value = "";
+            document.getElementById("comment-text").value = "";
+            loadComments(currentTheme);
+        } else {
+            alert("Ошибка при отправке");
+        }
+    };
+    
+    function escapeHtml(str) {
+        if (!str) return "";
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
+    
+    loadThemes();
+
+</script>
+
+<style>
+    .forum-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .themes-list { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 30px; }
+    .theme-btn { background: #e07c5c; color: white; border: none; padding: 12px 24px; border-radius: 40px; cursor: pointer; font-size: 16px; transition: background 0.2s; }
+    .theme-btn:hover { background: #c96b4e; }
+    .comment-item { border-bottom: 1px solid #eee0d8; padding: 15px 0; }
+    .comment-date { font-size: 12px; color: #8a7a72; margin-left: 10px; }
+    .comment-form { margin-top: 30px; display: flex; flex-direction: column; gap: 15px; }
+    .comment-form input, .comment-form textarea { padding: 12px; border: 1px solid #e0c8bc; border-radius: 24px; font-family: inherit; font-size: 15px; }
+    .comment-form button { background: #e07c5c; color: white; border: none; padding: 12px; border-radius: 40px; cursor: pointer; width: 200px; font-size: 16px; }
+    .comment-form button:hover { background: #c96b4e; }
+</style>
 
 
 
